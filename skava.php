@@ -9,7 +9,7 @@ Plugin URI: http://williamwilkerson.me
 Description: This is a collection of class libraries useful for wordpress
 Author: William Wilkerson
 Version: 1.0
-Author URI: http://williamwilkerson.me
+Author URI: https://usterix.com
 Text Domain: skava
 */
 /**
@@ -33,21 +33,13 @@ Text Domain: skava
  * -Provision Class
  * -Sidebar Class
  *
- * @author  William Wilkerson <william.wilkerson4@gmail.com>
+ * @author  William Wilkerson <william@usterix.com>
  *
  * @since   1.0
  *
  */
 require_once 'lib/class-tgm-plugin-activation.php';
 define("MYPLUGIN_DIR", plugin_dir_path(__FILE__));
-
-function skavaAutoLoader($className)
-{
-    if (substr($className, 0, strlen("Skava\\")) === "Skava\\") {
-        $classNameShort = str_replace("\\", "/", substr($className, strlen("Skava\\")));
-        $classNameShort = strtolower($classNameShort);
-        $path = MYPLUGIN_DIR . "classes/$classNameShort.php";
-        require $path;
-    }
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
 }
-spl_autoload_register('skavaAutoLoader');

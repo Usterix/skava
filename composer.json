@@ -1,0 +1,28 @@
+{
+  "name": "usterix/skava",
+  "description": "Collection of helper classes for WordPress",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "roots"
+  ],
+  "homepage": "https://github.com/Usterix/skava",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "William Wilkerson",
+      "email": "william@usterix.com",
+      "homepage": "https://usterix.com"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.3.2",
+    "composer/installers": "v1.0.6"
+  },
+  "autoload": {
+    "psr-0": {
+      "Skava": "src/"
+    }
+  }
+}
